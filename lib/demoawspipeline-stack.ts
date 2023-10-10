@@ -13,13 +13,13 @@ export class DemoawspipelineStack extends cdk.Stack {
     // const queue = new sqs.Queue(this, 'DemoawspipelineQueue', {
     //   visibilityTimeout: cdk.Duration.seconds(300)
     // });
-    const democicdpipeli = new CodePipeline(this, 'Demoawspipeline', {
+    const democicdpipeli = new CodePipeline(this, 'DemoawspipelineStack', {
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.gitHub('https://github.com/DDRRAKKENN/democicdnacho', 'main'),
-        comands: ['npm ci',
+        input: CodePipelineSource.gitHub('DDRRAKKENN/democicdnacho', 'main'),
+        commands: ['npm ci',
          'npm run build',
          'npx cdk synth']
-      } )
-    }
+      })
+    });
   }
 }
