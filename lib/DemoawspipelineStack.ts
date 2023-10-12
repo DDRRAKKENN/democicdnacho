@@ -15,8 +15,8 @@ export class DemoawspipelineStack extends cdk.Stack {
     const democicdpipeline = new CodePipeline(this, 'democicdpipeline', {
       synth: new ShellStep('Synth', {
         input: CodePipelineSource.gitHub('DDRRAKKENN/democicdnacho', 'main', {
-          authentication: cdk.SecretValue.secretsManager('github-token-v4', {
-            jsonField: 'github-token-v4'
+          authentication: cdk.SecretValue.secretsManager('git-token', {
+            jsonField: 'git-token'
           }),
         }), // nombre del repo
         commands: [
